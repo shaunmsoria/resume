@@ -12,6 +12,9 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <!-- Custom fonts for this template -->
   <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
@@ -394,11 +397,48 @@
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">Project #3: Containerised Linode Homelab</h3>
-            <div class="subheading mb-3">CLH</div>
-            <a href="https://cloris.surge.sh/" target="jsx-no-target-blank"><img class="img-fluid mx-auto mb-2" src="img/ClorisProjectNFT.png" alt=""></a>
-            <div>Project Description: This is a containerised and customisable linux homelab hosted on a shared Linode server with GUI and SSH remote acces.</div>
-	   </div>
+            <h3 class="mb-0">Project #3: Containerised Linode Homelab [CLH]</h3>
+	    <!-- <div class="subheading mb-3">CLH</div> -->
+            <a href="" target="jsx-no-target-blank"><img class="img-fluid mx-auto mb-2" src="img/CLHProject2.png" alt=""></a>
+	 <div class="container">
+	  <div class="panel-group">
+	    <div class="panel panel-default">
+	      <div class="panel-heading">
+	        <div class="panel-title">
+	         <a data-toggle="collapse" href="#collapse1">
+			 <p><center>CLH Debrief</center></p>
+		 </a>
+		</div>
+	      </div>
+	      <div id="collapse1" class="panel-collapse collapse">
+		<div class="panel-body"><b>Name:</b> Containerised Linode Homelab V1.0</div>	
+		<div class="panel-body"><b>Project Description:</b> This is a containerised and customisable linux homelab hosted on a shared Linode server with GUI and SSH remote acces.
+		</div>
+		<div class="panel-body"><b>Definition of Ready:</b> 09/08//22 </div>
+		<div class="panel-body"><b>Definition of Done:</b> 05/10/22</div>
+		<div class="panel-body"><b>Scope:</b> To have a homelab hosted on a shared linode server accessible from any device, at any time and anywhere in the world with a GUI and browser. This IDE is operating in a redeployable container, customisable to project development requirements.</div>
+		<div class="panel-body"><b>Challenges:</b>
+			<br><b>1)</b> Create a docker container to install the necessary tools for development while keeping the container size reasonable [~1Gb] 
+			<br>	Rational: Since the docker container need to be easily redeployable, the bigger the container, the longer it will take to download and install it 
+			<br>	Solution: Selecting light but highly customisable tools when possible, for exemple using nvim instead of VScode
+			<br><b>2)</b> Generating a GUI from a docker container streaming to a browser
+			<br>	Rational: Browsers are accesible from any devices
+			<br>	Solution: Created a docker container with Caddy receiving data from the IDE container and generating a VNC stream accessible on port 8080 by noVNC
+			<br><b>3)</b> Giving the appropriate permisions to the container to fulfil its functions whithout compromising security 
+			<br>	Rational: Google Chrome need priviledge permission to work in a container, allowing the user extensive access to the linode server resources 
+			<br>	Solution: Securing access to the container via SSH, password and creating a linode server dedicated to only run this container with the minimum resource necessary.
+		</div>
+		<div class="panel-body"><b>Points of Improvement:</b>
+			<br><b>1)</b> Creating a virtual sound card for the linode server the sample audio with the video stream
+			<br><b>2)</b> Develop process to ease the container customisable process
+			<br><b>3)</b> Run scripts at start of container to increase automation
+		</div>
+	        <div class="panel-footer">Panel Footer</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>  
+	  </div>
         </div>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -406,7 +446,7 @@
             <h3 class="mb-0">Project #2: Cloris Project NFT</h3>
             <div class="subheading mb-3">Cloris</div>
             <a href="https://cloris.surge.sh/" target="jsx-no-target-blank"><img class="img-fluid mx-auto mb-2" src="img/ClorisProjectNFT.png" alt=""></a>
-            <div>Project Description: This is an ERC721 Non Fungible Token (NFT) deployed on the Rinkeby Network. You can acquire 3 tokens for Free as a demonstration. Please login with <a href="https://metamask.io/" target="jsx-no-target-blank">MetaMask</a> on the Rinkeby Network with some Ether: <a href="https://cloris.surge.sh/" target="jsx-no-target-blank">Cloris Project NFT</a>.</div>
+	    <div><b>Project Description:</b> This is an ERC721 Non Fungible Token (NFT) deployed on the Rinkeby Network. You can acquire 3 tokens for Free as a demonstration. Please login with <a href="https://metamask.io/" target="jsx-no-target-blank">MetaMask</a> on the Rinkeby Network with some Ether: <a href="https://cloris.surge.sh/" target="jsx-no-target-blank">Cloris Project NFT</a>.</div>
             <!--
 	    <a href="https://testnets.opensea.io/collection/cloris" target="jsx-no-target-blank"><img class="img-fluid mx-auto mb-2" src="img/OpenseaClorisProject2.png" alt=""></a>
             <div>You can see your token on <a href="https://cloris.surge.sh/" target="jsx-no-target-blank">Opensea Cloris</a> Rinkeby test network, please make sure you are login with <a href="https://metamask.io/" target="jsx-no-target-blank">MetaMask</a> on the Rinkeby test network .</div>
@@ -418,7 +458,7 @@
             <h3 class="mb-0">Project #1: Global Intelligence Token Exchange</h3>
             <div class="subheading mb-3">GIT</div>
             <a href="https://gitdapp.surge.sh/" target="jsx-no-target-blank"><img class="img-fluid mx-auto mb-2" src="img/portfolio.jpg" alt=""></a>
-            <div>Project Description: This is an ERC20 token exchange deployed on the Kovan network. To see this project live, please make use your <a href="https://metamask.io/" target="jsx-no-target-blank">MetaMask</a> is active on the Kovan Network:  <a href="https://gitdapp.surge.sh/" target="jsx-no-target-blank">Global Intelligence Token</a>.</div>
+	    <div><b>Project Description:</b> This is an ERC20 token exchange deployed on the Kovan network. To see this project live, please make use your <a href="https://metamask.io/" target="jsx-no-target-blank">MetaMask</a> is active on the Kovan Network:  <a href="https://gitdapp.surge.sh/" target="jsx-no-target-blank">Global Intelligence Token</a>.</div>
           </div>
         </div>
         <!--
