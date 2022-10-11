@@ -411,13 +411,28 @@
 		</div>
 	      </div>
 	      <div id="collapse1" class="panel-collapse collapse">
-		<div class="panel-body"><b>Name:</b> Containerised Linode Homelab V1.0</div>
+		<div class="panel-body"><b>Name:</b> Containerised Linode Homelab V1.0</div>	
+		<div class="panel-body"><b>Project Description:</b> This is a containerised and customisable linux homelab hosted on a shared Linode server with GUI and SSH remote acces.
+		</div>
 		<div class="panel-body"><b>Definition of Ready:</b> 09/08//22 </div>
 		<div class="panel-body"><b>Definition of Done:</b> 05/10/22</div>
-		<div class="panel-body">
-			<strong>Project Description:</strong> This is a <b>containerised</b> and customisable <b>linux homelab hosted</b> on a <b>shared Linode server</b> with <b>GUI</b> and <b>SSH</b> remote acces.Click here for more details.
+		<div class="panel-body"><b>Scope:</b> To have a homelab hosted on a shared linode server accessible from any device, at any time and anywhere in the world with a GUI and browser. This IDE is operating in a redeployable container, customisable to project development requirements.</div>
+		<div class="panel-body"><b>Challenges:</b>
+			<br><b>1)</b> Create a docker container to install the necessary tools for development while keeping the container size reasonable [~1Gb] 
+			<br>	Rational: Since the docker container need to be easily redeployable, the bigger the container, the longer it will take to download and install it 
+			<br>	Solution: Selecting light but highly customisable tools when possible, for exemple using nvim instead of VScode
+			<br><b>2)</b> Generating a GUI from a docker container streaming to a browser
+			<br>	Rational: Browsers are accesible from any devices
+			<br>	Solution: Created a docker container with Caddy receiving data from the IDE container and generating a VNC stream accessible on port 8080 by noVNC
+			<br><b>3)</b> Giving the appropriate permisions to the container to fulfil its functions whithout compromising security 
+			<br>	Rational: Google Chrome need priviledge permission to work in a container, allowing the user extensive access to the linode server resources 
+			<br>	Solution: Securing access to the container via SSH, password and creating a linode server dedicated to only run this container with the minimum resource necessary.
 		</div>
-	        <div class="panel-body"></div>
+		<div class="panel-body"><b>Points of Improvement:</b>
+			<br><b>1)</b> Creating a virtual sound card for the linode server the sample audio with the video stream
+			<br><b>2)</b> Develop process to ease the container customisable process
+			<br><b>3)</b> Run scripts at start of container to increase automation
+		</div>
 	        <div class="panel-footer">Panel Footer</div>
 	      </div>
 	    </div>
